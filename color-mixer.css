@@ -202,12 +202,12 @@ button:hover {
 /* Initial circles defaults */
 
 .circle--1 {
-  background: hsl(0, 80%, 50%);
+  background: hsl(120, 80%, 50%);
   left: calc(50% - 175px); top: calc(50% - 105px);
 }
 
 .circle--2 {
-  background: hsl(120, 80%, 50%);
+  background: hsl(0, 80%, 50%);
   left: calc(50% - 35px);  top: calc(50% - 105px);
 }
 
