@@ -1,0 +1,223 @@
+/* Global */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  background: #000;
+  color: #ddd;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1,
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  color: #fff;
+  letter-spacing: 0.01em;
+  margin-bottom: .5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h2:not(:first-child) {
+  margin-top: .5rem;
+}
+
+ul {
+  margin-left: 1.5rem;
+}
+
+ul, p {
+  margin-bottom: 1rem;
+}
+
+button,
+input[type="number"] {
+  height: 2rem;
+  border-radius: .25rem;
+  padding: 0 .75rem;
+  border: none;
+  font-size: 1rem;
+}
+
+button {
+  background: #fff;
+  color: #111;
+}
+
+button:hover {
+  background: #555;
+  color: #fff;
+}
+
+/* Stage */
+
+.stage {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 40%;
+  max-width: 22rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #333;
+}
+
+.sidebar-static-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+#add-circle {
+  margin-right: auto;
+}
+
+.circle-controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #666;
+  color: #fff;
+  padding: 1.5rem;
+}
+
+.color-preview {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  outline: .25rem solid #fff;
+  margin-bottom: 1rem;
+}
+
+/* Mixer controls (HSL rows) */
+
+.mixer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mixer-row {
+  display: flex;
+  align-items: center;
+}
+
+.mixer label {
+  min-width: 1rem;
+  color: #fff;
+  user-select: none;
+}
+
+.mixer input[type="range"] {
+  flex-grow: 1;
+  height: .5rem;
+  background: #fff;
+  border-radius: .25rem;
+  margin: 0 .75rem 0 .5rem;
+}
+
+.mixer #hue {
+  background: linear-gradient(to right, hsl(0, 100%, 50%), hsl(60, 100%, 50%), hsl(120, 100%, 50%), hsl(180, 100%, 50%), hsl(240, 100%, 50%), hsl(300, 100%, 50%), hsl(360, 100%, 50%));
+}
+
+/* Range thumb */
+
+.mixer input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.mixer input[type="range"]::-webkit-slider-thumb,
+.mixer input[type="range"]::-moz-range-thumb {
+  width: 1rem;
+  height: 2rem;
+  border-radius: .25rem;
+  background: #111;
+  cursor: pointer;
+  border: none;
+}
+
+/* Number inputs */
+
+.mixer input[type="number"] {
+  width: 3.5rem;
+  color: #eee;
+  background: #111;
+  -moz-appearance: textfield;
+  text-align: right;
+}
+
+.mixer input[type="number"]::-webkit-inner-spin-button,
+.mixer input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.mixer .num-suffix {
+  min-width: 1rem;
+  margin-left: .25rem;
+}
+
+.circle-controls-panel .delete-circle {
+  margin-top: 1rem;
+  align-self: flex-end;
+}
+
+/* Circles */
+
+.circle {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  cursor: grab;
+  border: none;
+}
+
+.circle[data-editing="true"],
+.circle:active {
+  outline: .25rem solid #fff;
+  outline-offset: -0.125rem;
+}
+
+/* Initial circles defaults */
+
+.circle--1 {
+  background: hsl(0, 100%, 50%);
+  left: calc(50% - 175px); top: calc(50% - 105px);
+}
+
+.circle--2 {
+  background: hsl(120, 100%, 50%);
+  left: calc(50% - 35px);  top: calc(50% - 105px);
+}
+
+.circle--3 {
+  background: hsl(240, 100%, 50%);
+  left: calc(50% - 105px); top: calc(50% - 35px);
+}
+
+.circle--4 {
+  background: hsl(44, 100%, 50%);
+  left: calc(50% - 105px); top: calc(50% - 175px);
+}

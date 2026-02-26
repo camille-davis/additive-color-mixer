@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Additive Color Mixer</title>
+  <link rel="stylesheet" href="color-mixer.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-static-content">
+      <h1 class="title">Additive Color Mixer</h1>
+      <p>Mix any number of colors!</p>
+      <h2>Usage</h2>
+      <ul>
+        <li>Click a circle to edit its color (hue, saturation, and lightness).</li>
+        <li>Drag a circle to move it.</li>
+        <li>Add or delete circles as needed.</li>
+      </ul>
+      <h2>Controls</h2>
+      <button id="add-circle">Add Circle</button>
+    </div>
+    <div id="circle-controls" class="circle-controls" aria-live="polite"></div>
+  </div>
+  <div class="stage" id="stage">
+    <button class="circle circle--1" id="circle-1" data-channel="1"></button>
+    <button class="circle circle--2" id="circle-2" data-channel="2"></button>
+    <button class="circle circle--3" id="circle-3" data-channel="3"></button>
+    <button class="circle circle--4" id="circle-4" data-channel="4"></button>
+  </div>
+  <script src="color-mixer.js"></script>
+</body>
+</html>
