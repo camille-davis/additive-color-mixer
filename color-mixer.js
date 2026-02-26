@@ -171,6 +171,10 @@
   }
 
   function startEditing(circle) {
+    var selectedCircle = stage.querySelector('.circle[data-editing="true"]');
+    if (selectedCircle) {
+      selectedCircle.removeAttribute('data-editing');
+    }
     circle.setAttribute('data-editing', 'true');
     createMixerPanel(circle);
   }

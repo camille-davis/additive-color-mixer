@@ -68,7 +68,6 @@ button:hover {
 .stage {
   flex: 1;
   position: relative;
-  overflow: hidden;
 }
 
 /* Sidebar */
